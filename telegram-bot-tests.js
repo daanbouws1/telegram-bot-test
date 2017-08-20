@@ -12,26 +12,24 @@ function testTelegram () {
     var api = new telegram({
         token: '373890572:AAG5_y-nSgVM9EDM67ZqzGy_6c3l47Zf9kk',
         updates: {
-            enabled: true
+            enabled: false
         }
     });
 
     api.getMe().then(function (data) {
-            console.log(data);
-            assert.equal(data.id, "373890572");
-            assert.equal(data.first_name, 'asv_testbot');
-            assert.equal(data.username, 'asv_testbot');
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
+        console.log(data);
+        assert.equal(data.id, "373890572");
+        assert.equal(data.first_name, 'asv_testbot');
+        assert.equal(data.username, 'asv_testbot');
+    }).catch(function (err) {
+        console.log(err);
+    });
 
     var chat_id = '1206425';
-    var message_to_forward_id = "";
+    //var message_to_forward_id = "";
 
     api.sendMessage({chat_id: '1206425', text: "testmessage"}).then(function (data) {
-        console.log(data);
-        message_to_forward_id = data.message_id;
+        //message_to_forward_id = data.message_id;
         assert.equal(data.text, "testmessage");
         assert.equal(data.chat.id, chat_id);
         assert.equal(data.chat.type, "private");
@@ -95,8 +93,6 @@ function testTelegram () {
     }).catch(function (err) {
         console.log(err);
     });
-
-    throw new Error("If this the only error, all went well");
 }
 
 

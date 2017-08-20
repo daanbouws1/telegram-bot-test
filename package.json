@@ -1,0 +1,16 @@
+{
+  "name": "telegram-bot-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "telegram-bot-tests.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "telegram-bot-api": "^1.2.0",
+    "util": "^0.10.3"
+  }
+}
